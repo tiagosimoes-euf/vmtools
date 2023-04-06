@@ -53,8 +53,13 @@ VAGRANT_COMMAND="${ARGS[0]}"
 # Require confirmation for certain vagrant commands
 case ${VAGRANT_COMMAND} in
   "destroy" )
-  echo "WARNING: this might be a bad idea!"
-  ;;
+    echo "WARNING: this might be a bad idea!"
+    ;;
+  "exec" )
+    echo "$@"
+    $@
+    ;;
+
 esac
 
 # Run 'vagrant' command with all arguments
