@@ -32,20 +32,6 @@ if ! [ -z ${VAGRANT_HOME_EXTERNAL} ]; then
   export VAGRANT_HOME=${VAGRANT_HOME_EXTERNAL}
 fi
 
-if ! [ -z ${VBOX_FOLDER_EXTERNAL} ]; then
-  if ! [ -x "$(command -v vboxmanage)" ]; then
-    echo 'Error: vboxmanage is not installed.'
-    exit 1
-  fi
-
-  if ! [ -d ${VBOX_FOLDER_EXTERNAL} ]; then
-    echo "Error: ${VBOX_FOLDER_EXTERNAL} is not accessible."
-    exit 1
-  fi
-
-  vboxmanage setproperty machinefolder ${VBOX_FOLDER_EXTERNAL}
-fi
-
 # Extract arguments as an array
 ARGS=("$@")
 VAGRANT_COMMAND="${ARGS[0]}"
@@ -73,10 +59,6 @@ if ! [ -z ${VAGRANT_HOME_EXTERNAL} ]; then
   else
     unset VAGRANT_HOME
   fi
-fi
-
-if ! [ -z ${VBOX_FOLDER_EXTERNAL} ]; then
-  vboxmanage setproperty machinefolder default
 fi
 
 exit 0
