@@ -1,14 +1,12 @@
 # VM tools
 
-Simple wrapper around **Vagrant** that sets `$VAGRANT_HOME` to a directory other than `~/.vagrant.d`, as well as the VirtualBox `machinefolder` to a directory other than the default `~/VirtualBox VMs`. The script then executes the `vagrant` command and resets the values to their defaults.
+Simple wrapper around **Vagrant** that sets `$VAGRANT_HOME` to a directory other than `~/.vagrant.d`. The script then executes the `vagrant` command and resets the values to their defaults.
 
 This approach allows VMs to be stored in a removable device.
 
 ## Requirements
 
-This script requires **Vagrant** and **VirtualBox** to be installed.
-
-## Installation
+This script requires **Vagrant** to be installed.
 
 ## Installation
 
